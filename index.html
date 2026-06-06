@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light" data-lang="en">
 <head>
-<link rel="icon" type="image/png" href="favicon.png?v=5">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Noor Al Islam Academy | نور الإسلام أكاديمي</title>
@@ -90,6 +89,87 @@ nav {
 .lang-btn.active { background:var(--green);color:#fff; }
 .theme-toggle { width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:var(--bg3);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.3s; }
 .theme-toggle:hover { background:var(--green);color:#fff; }
+
+/* NAV LINKS */
+.nav-links { display:flex;align-items:center;gap:0.6rem;list-style:none; }
+.nav-links a {
+  font-family:'Cinzel',serif;font-size:0.72rem;font-weight:600;letter-spacing:0.06em;
+  color:var(--text2);text-decoration:none;padding:6px 16px;border-radius:6px;
+  transition:all 0.25s;white-space:nowrap;
+}
+[data-lang="ar"] .nav-links a { font-family:'Tajawal',sans-serif;font-size:0.82rem;letter-spacing:0; }
+.nav-links a:hover { color:var(--green);background:var(--bg2); }
+.nav-links .dropdown { position:relative; }
+.nav-links .dropdown > a::after { content:' ▾';font-size:0.6rem; }
+.nav-links .dropdown-menu {
+  display:none;position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  min-width:180px;box-shadow:0 8px 30px var(--shadow);z-index:2000;padding:6px;
+}
+.nav-links .dropdown:hover .dropdown-menu { display:block; }
+.nav-links .dropdown-menu a { display:block;padding:8px 14px;border-radius:6px;font-size:0.72rem; }
+[data-lang="ar"] .nav-links .dropdown-menu { left:auto;right:50%;transform:translateX(50%); }
+@media(max-width:900px){ .nav-links { display:none; } }
+
+/* PRICING */
+.pricing-section { background:var(--bg2); }
+.pricing-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto; }
+.pricing-card {
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  padding:2rem 1.5rem;text-align:center;transition:all 0.3s;position:relative;overflow:hidden;
+}
+.pricing-card:hover { transform:translateY(-6px);box-shadow:0 24px 50px var(--shadow); }
+.pricing-card.featured { border-color:var(--gold);box-shadow:0 0 0 2px var(--gold); }
+.pricing-card.featured::before {
+  content:'Most Popular';position:absolute;top:14px;right:-28px;
+  background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.08em;padding:4px 36px;
+  transform:rotate(45deg);
+}
+[data-lang="ar"] .pricing-card.featured::before { content:'الأكثر طلباً';right:auto;left:-28px;transform:rotate(-45deg); }
+.pricing-plan-name {
+  font-family:'Cinzel',serif;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;
+  color:var(--gold);text-transform:uppercase;margin-bottom:0.5rem;
+}
+[data-lang="ar"] .pricing-plan-name { font-family:'Tajawal',sans-serif;letter-spacing:0; }
+.pricing-hours { font-size:0.85rem;color:var(--text3);margin-bottom:1.2rem; }
+[data-lang="ar"] .pricing-hours { font-family:'Tajawal',sans-serif; }
+.pricing-price {
+  font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:700;color:var(--green);
+  line-height:1;margin-bottom:0.2rem;
+}
+.pricing-price span { font-size:1.5rem;vertical-align:top;margin-top:0.5rem;display:inline-block; }
+.pricing-period { font-size:0.75rem;color:var(--text3);margin-bottom:1.5rem; }
+[data-lang="ar"] .pricing-period { font-family:'Tajawal',sans-serif; }
+.pricing-features { list-style:none;margin-bottom:1.8rem;text-align:left; }
+[data-lang="ar"] .pricing-features { text-align:right; }
+.pricing-features li {
+  display:flex;align-items:center;gap:0.6rem;padding:0.4rem 0;
+  font-family:'Cormorant Garamond',serif;font-size:0.9rem;color:var(--text2);
+  border-bottom:1px solid var(--border);
+}
+[data-lang="ar"] .pricing-features li { font-family:'Tajawal',sans-serif;font-size:0.95rem; }
+.pricing-features li:last-child { border:none; }
+.pricing-features li::before { content:'✓';color:var(--green);font-weight:700;flex-shrink:0; }
+.pricing-book {
+  display:block;width:100%;padding:12px;
+  background:linear-gradient(135deg,var(--green),var(--green-dark));
+  color:#fff;border:none;border-radius:10px;
+  font-family:'Cinzel',serif;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;
+  cursor:pointer;text-decoration:none;transition:all 0.3s;
+}
+[data-lang="ar"] .pricing-book { font-family:'Tajawal',sans-serif;letter-spacing:0; }
+.pricing-book:hover { transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,92,58,0.35); }
+.pricing-card.featured .pricing-book { background:linear-gradient(135deg,var(--gold),var(--gold-dark)); }
+
+/* VIDEO SECTION */
+.video-section { background:var(--bg); }
+.video-wrapper {
+  max-width:800px;margin:0 auto;border-radius:20px;overflow:hidden;
+  box-shadow:0 20px 60px var(--shadow);border:1px solid var(--border);
+  aspect-ratio:16/9;
+}
+.video-wrapper iframe { width:100%;height:100%;display:block;border:none; }
 .whatsapp-float {
   position:fixed;
   bottom:28px;right:28px;
@@ -454,6 +534,24 @@ footer .logo-area p { font-size:0.85rem;margin-top:0.5rem;color:rgba(255,255,255
       <span class="ar" style="font-family:'Tajawal',sans-serif">نور الإسلام<br>أكاديمي</span>
     </span>
   </a>
+  <ul class="nav-links">
+    <li><a href="#hero"><span class="en">Home</span><span class="ar">الرئيسية</span></a></li>
+    <li><a href="#transform"><span class="en">About Us</span><span class="ar">من نحن</span></a></li>
+    <li class="dropdown">
+      <a href="#courses"><span class="en">Courses</span><span class="ar">الكورسات</span></a>
+      <div class="dropdown-menu">
+        <a href="#courses"><span class="en">All Courses</span><span class="ar">جميع الكورسات</span></a>
+        <a href="#mastery"><span class="en">What You'll Master</span><span class="ar">ما ستتقنه</span></a>
+        <a href="#kids"><span class="en">Kids Program</span><span class="ar">برنامج الأطفال</span></a>
+      </div>
+    </li>
+    <li><a href="#features"><span class="en">Features</span><span class="ar">المميزات</span></a></li>
+    <li><a href="#benefits"><span class="en">Benefits</span><span class="ar">الفوائد</span></a></li>
+    <li><a href="#pricing"><span class="en">Fees</span><span class="ar">الأسعار</span></a></li>
+    <li><a href="#journey"><span class="en">Journey</span><span class="ar">الرحلة</span></a></li>
+    <li><a href="#faq"><span class="en">FAQ</span><span class="ar">الأسئلة</span></a></li>
+    <li><a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a></li>
+  </ul>
   <div class="nav-right">
     <div class="lang-toggle">
       <button class="lang-btn active" onclick="setLang('en')">EN</button>
@@ -464,7 +562,7 @@ footer .logo-area p { font-size:0.85rem;margin-top:0.5rem;color:rgba(255,255,255
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-bg">
     <svg class="hero-crescent" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M100 10 C55 10 20 45 20 90 C20 135 55 170 100 170 C80 145 68 118 68 90 C68 62 80 35 100 10Z" fill="var(--gold)" opacity="0.4"/>
@@ -570,7 +668,7 @@ footer .logo-area p { font-size:0.85rem;margin-top:0.5rem;color:rgba(255,255,255
         </ul>
       </div>
       <div class="mastery-card reveal">
-        <div class="mastery-icon">🎵</div>
+        <div class="mastery-icon">📜</div>
         <h4><span class="en">Tajweed Application</span><span class="ar">تطبيق التجويد</span></h4>
         <ul>
           <li><span class="en">Applying rules automatically</span><span class="ar">تطبيق القواعد تلقائياً</span></li>
@@ -929,6 +1027,113 @@ footer .logo-area p { font-size:0.85rem;margin-top:0.5rem;color:rgba(255,255,255
           <div class="icon">⭐</div>
           <p><span class="en">Reward & motivation system</span><span class="ar">نظام مكافآت وتحفيز</span></p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="video-section section-pad" id="about-video">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label"><span class="en">Meet Your Teacher</span><span class="ar">تعرف على معلمك</span></span>
+      <h2 class="section-title">
+        <span class="en">Sheikh Mohamed Saad Said</span>
+        <span class="ar">الشيخ محمد سعد سعيد</span>
+      </h2>
+      <p class="section-desc" style="margin:0 auto 2.5rem">
+        <span class="en">Watch a personal introduction from your teacher and learn about his teaching philosophy and experience.</span>
+        <span class="ar">شاهد تقديمًا شخصيًا من معلمك وتعرف على فلسفته التعليمية وخبرته.</span>
+      </p>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe src="https://www.youtube.com/embed/XPKo58K5Z_4" title="Sheikh Mohamed Saad Said Introduction" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section section-pad" id="pricing">
+  <div class="container">
+    <div class="reveal" style="text-align:center">
+      <span class="section-label"><span class="en">Tuition Fees</span><span class="ar">رسوم الدراسة</span></span>
+      <h2 class="section-title">
+        <span class="en">Simple, Transparent Pricing</span>
+        <span class="ar">أسعار واضحة وشفافة</span>
+      </h2>
+      <p class="section-desc" style="margin:0 auto 3rem">
+        <span class="en">Choose the plan that fits your schedule and goals. All plans include a certified native Arabic teacher and recorded lessons.</span>
+        <span class="ar">اختر الخطة التي تناسب جدولك وأهدافك. جميع الخطط تشمل معلمًا عربيًا أصليًا معتمدًا وتسجيلات الدروس.</span>
+      </p>
+    </div>
+    <div class="pricing-grid">
+      <!-- Plan A -->
+      <div class="pricing-card reveal">
+        <div class="pricing-plan-name"><span class="en">Plan A</span><span class="ar">الخطة A</span></div>
+        <div class="pricing-hours"><span class="en">2 Hours Per Month</span><span class="ar">ساعتان في الشهر</span></div>
+        <div class="pricing-price"><span>$</span>15</div>
+        <div class="pricing-period"><span class="en">/ month</span><span class="ar">/ شهريًا</span></div>
+        <ul class="pricing-features">
+          <li><span class="en">1 Day Per Week</span><span class="ar">يوم واحد في الأسبوع</span></li>
+          <li><span class="en">30 Minutes Per Lesson</span><span class="ar">٣٠ دقيقة للحصة</span></li>
+          <li><span class="en">2 Hours Per Month</span><span class="ar">ساعتان في الشهر</span></li>
+          <li><span class="en">Native Arabic Teacher</span><span class="ar">معلم عربي أصلي</span></li>
+          <li><span class="en">Access to Lesson Recordings</span><span class="ar">وصول لتسجيلات الدروس</span></li>
+        </ul>
+        <a href="https://wa.me/201159744635?text=Hello%2C%20I%20would%20like%20to%20book%20Plan%20A" target="_blank" class="pricing-book">
+          <span class="en">Book Now</span><span class="ar">احجز الآن</span>
+        </a>
+      </div>
+      <!-- Plan B -->
+      <div class="pricing-card featured reveal">
+        <div class="pricing-plan-name"><span class="en">Plan B</span><span class="ar">الخطة B</span></div>
+        <div class="pricing-hours"><span class="en">4 Hours Per Month</span><span class="ar">٤ ساعات في الشهر</span></div>
+        <div class="pricing-price"><span>$</span>30</div>
+        <div class="pricing-period"><span class="en">/ month</span><span class="ar">/ شهريًا</span></div>
+        <ul class="pricing-features">
+          <li><span class="en">1 Day Per Week</span><span class="ar">يوم واحد في الأسبوع</span></li>
+          <li><span class="en">60 Minutes Per Lesson</span><span class="ar">٦٠ دقيقة للحصة</span></li>
+          <li><span class="en">4 Hours Per Month</span><span class="ar">٤ ساعات في الشهر</span></li>
+          <li><span class="en">Native Arabic Teacher</span><span class="ar">معلم عربي أصلي</span></li>
+          <li><span class="en">Access to Lesson Recordings</span><span class="ar">وصول لتسجيلات الدروس</span></li>
+        </ul>
+        <a href="https://wa.me/201159744635?text=Hello%2C%20I%20would%20like%20to%20book%20Plan%20B" target="_blank" class="pricing-book">
+          <span class="en">Book Now</span><span class="ar">احجز الآن</span>
+        </a>
+      </div>
+      <!-- Plan C -->
+      <div class="pricing-card reveal">
+        <div class="pricing-plan-name"><span class="en">Plan C</span><span class="ar">الخطة C</span></div>
+        <div class="pricing-hours"><span class="en">10 Hours Per Month</span><span class="ar">١٠ ساعات في الشهر</span></div>
+        <div class="pricing-price"><span>$</span>70</div>
+        <div class="pricing-period"><span class="en">/ month</span><span class="ar">/ شهريًا</span></div>
+        <ul class="pricing-features">
+          <li><span class="en">5 Days Per Week</span><span class="ar">٥ أيام في الأسبوع</span></li>
+          <li><span class="en">30 Minutes Per Lesson</span><span class="ar">٣٠ دقيقة للحصة</span></li>
+          <li><span class="en">10 Hours Per Month</span><span class="ar">١٠ ساعات في الشهر</span></li>
+          <li><span class="en">Native Arabic Teacher</span><span class="ar">معلم عربي أصلي</span></li>
+          <li><span class="en">Access to Lesson Recordings</span><span class="ar">وصول لتسجيلات الدروس</span></li>
+        </ul>
+        <a href="https://wa.me/201159744635?text=Hello%2C%20I%20would%20like%20to%20book%20Plan%20C" target="_blank" class="pricing-book">
+          <span class="en">Book Now</span><span class="ar">احجز الآن</span>
+        </a>
+      </div>
+      <!-- Plan D -->
+      <div class="pricing-card reveal">
+        <div class="pricing-plan-name"><span class="en">Plan D</span><span class="ar">الخطة D</span></div>
+        <div class="pricing-hours"><span class="en">20 Hours Per Month</span><span class="ar">٢٠ ساعة في الشهر</span></div>
+        <div class="pricing-price"><span>$</span>140</div>
+        <div class="pricing-period"><span class="en">/ month</span><span class="ar">/ شهريًا</span></div>
+        <ul class="pricing-features">
+          <li><span class="en">5 Days Per Week</span><span class="ar">٥ أيام في الأسبوع</span></li>
+          <li><span class="en">60 Minutes Per Lesson</span><span class="ar">٦٠ دقيقة للحصة</span></li>
+          <li><span class="en">20 Hours Per Month</span><span class="ar">٢٠ ساعة في الشهر</span></li>
+          <li><span class="en">Native Arabic Teacher</span><span class="ar">معلم عربي أصلي</span></li>
+          <li><span class="en">Access to Lesson Recordings</span><span class="ar">وصول لتسجيلات الدروس</span></li>
+        </ul>
+        <a href="https://wa.me/201159744635?text=Hello%2C%20I%20would%20like%20to%20book%20Plan%20D" target="_blank" class="pricing-book">
+          <span class="en">Book Now</span><span class="ar">احجز الآن</span>
+        </a>
       </div>
     </div>
   </div>
